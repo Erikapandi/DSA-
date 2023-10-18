@@ -1,0 +1,162 @@
+import java.util.*;
+
+public class Dfs_Bfs {
+
+	public static void main(String[] args) {
+	Scanner scan = new Scanner(System.in);
+	LinkedList<String> link = new LinkedList<>();
+	LinkedList<String> qu = new LinkedList<String>();
+	boolean t=true;
+	while(t) {
+	System.out.println("pick");
+	System.out.println("1.dfs");
+	System.out.println("2.Bfs");
+	System.out.println("3.Exit");
+	int a=scan.nextInt();
+	scan.nextLine();
+	if(a== 1) {
+	
+	    boolean d = true;
+		while(d) {
+			System.out.println("-----DFS-----");
+		System.out.println("pick");
+		System.out.println("1.Create DFS");
+		System.out.println("2.Read DFS");
+		System.out.println("3.Update DFS");
+		System.out.println("4.Delete DFS");
+		System.out.println("5.Exit DFS");
+	    int b=scan.nextInt();
+	    scan.nextLine();
+	    
+	    	switch (b) {
+	    	
+	    	
+	    	case 1:
+	    		 System.out.println("--------------------------");
+                 System.out.println("--------------------------");
+                 System.out.println("Create :");
+                 String enter = scan.nextLine();
+                 link.add(enter); // Add to the ArrayList
+                 break;
+                 
+                 
+	    	case 2:
+	    		 System.out.println("--------------------------");
+                 System.out.println("--------------------------");
+                 System.out.println("Read list display");
+                 for (String vehicle : link) {
+                     System.out.println(vehicle);
+                 }
+                 break;
+                 
+                 
+	    	case 3:
+	    		System.out.println("--------------------------");
+                System.out.println("--------------------------");
+	    		System.out.print("Enter index num to update from (0-" + (link.size()-1)+"):");
+		        int index = scan.nextInt();
+		        scan.nextLine();
+
+		        if (index >= 0 && index < link.size()) {
+		            System.out.print("Enter the new value: ");
+		            String newValue = scan.nextLine();
+		            link.set(index, newValue);
+		            System.out.println("Element updated.");
+		        } else {
+		            System.out.println("Invalid index.");
+		        }
+	    		break;
+	    		
+	    		
+	    	case 4:
+	    		System.out.println("--------------------------");
+                System.out.println("--------------------------");
+                System.out.println("before delete: " + link);
+               System.out.print("Data to be deleted :");
+                String del = scan.nextLine();
+    				link.remove(del);
+                System.out.println("Remaining : " + link);
+                break;
+                
+                
+	    	case 5:
+	    		d =false;
+	    		System.out.println("exiting");
+	    		break;
+	        default:
+	    			}
+	    		}
+	    	}
+	                                       	
+	
+		else if(a==2) {
+		boolean s = true;
+		while(s) {
+			System.out.println("-----BFS-----");
+
+		System.out.println("pick");
+		System.out.println("1.Create BFS");
+		System.out.println("2.Read BFS");
+		System.out.println("3.Update BFS");
+		System.out.println("4.Delete BFS");
+		System.out.println("5.Exit BFS");
+		int c=scan.nextInt();
+		scan.nextLine();
+		switch (c)
+		{
+		
+		case 1:
+			 System.out.println("--------------------------");
+             System.out.println("--------------------------");
+             System.out.println("Create :");
+             String enter = scan.nextLine();
+             qu.add(enter); // Add to the ArrayList
+             break;
+             
+             
+		case 2:
+			 System.out.println("--------------------------");
+             System.out.println("--------------------------");
+             System.out.println("Read list display");
+             for (String vehicle : qu) {
+                 System.out.println(vehicle);
+             }
+             break;
+             
+             
+		case 3:
+			System.out.println("--------------------------");
+            System.out.println("--------------------------");
+    		System.out.print("Enter index num to update from (0-" + (qu.size()-1)+"):");
+	        int inde = scan.nextInt();
+	        scan.nextLine();
+
+	        if (inde >= 0 && inde< qu.size()) {
+	            System.out.print("Enter the new value: ");
+	            String newValue = scan.nextLine();
+	            qu.set(inde, newValue);
+	            System.out.println("Element updated.");
+	        } else {
+	            System.out.println("Invalid index.");
+	        }
+    		break;
+    	
+    		
+		case 4:
+			System.out.println("--------------------------");
+            System.out.println("--------------------------");
+            System.out.println("before delete: " + qu);
+            System.out.print("Enter data to be deleted :");
+            String delete = scan.nextLine();
+				qu.remove(delete);
+			    System.out.println("Remaining : " + qu);
+            break;
+            
+            
+		case 5:
+			s = false;
+    		System.out.println("exiting");
+    		break;
+	    default:
+															}
+		                                              	}
